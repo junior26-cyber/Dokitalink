@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOKITALINK - Nos Services</title>
+  <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styles généraux */
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Roboto', sans-serif;
+      color: #000000;
+      background-image: url("images/tel1.jpg");
+      background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
+      animation: fadeIn 1s ease-in;
+      
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    h2, h3 {
+      margin: 0;
+      color: #3A8DFF;
+    }
+    p {
+      margin: 0 0 10px;
+    }
+
+    /* En-tête */
+    header {
+      position:relative;
+      top: 0;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 40px;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      padding-bottom: 20px;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #000000;
+    }
+    h1 {
+      font-family:'Courier New', Courier, monospace;
+      font-size: 2.5rem;
+      color:  #3A8DFF;
+
+    }
+
+    /* Section héro */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+      margin-top: 40px;
+      padding: 5%;
+      border-radius: 20px;
+
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    /* Section services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .service-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+      display: flex;
+      align-items: center;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .service-icon {
+      font-size: 40px;
+      color: #090909;
+      margin-right: 20px;
+    }
+    .service-content h3 {
+      color:#3A8DFF;
+      margin-bottom: 10px;
+    }
+
+    /* Section contact */
+    .contact {
+      background-color: #f1f1f1;
+      padding: 40px;
+      text-align: center;
+    }
+    .contact form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .contact button {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .contact button:hover {
+      background-color:#004d40;
+    }
+
+    /* Pied de page */
+    footer {
+  position: relative;
+  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: left;
+  padding: 30px 20px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(180, 173, 173, 0.3); /* léger assombrissement si tu veux */
+  z-index: 0;
+}
+
+footer * {
+  position: relative;
+  z-index: 1;
+}
+
+    .social-icon {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.social-icon a {
+  font-size: 2.5rem;
+  transition: transform 0.3s ease;
+}
+
+
+.social-icon {
+  display: flex;
+  justify-content:right;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.social-icon a {
+  font-size: 2.2rem;
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon a[href*="facebook"] {
+  color: #1877f2;
+}
+
+.social-icon a[href*="tiktok"] {
+    color: #1877f2;
+
+}
+.social-icon a[href*="instagram"] {
+    color: #1877f2;
+}
+.social-icon a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+.logo{
+  border-radius: 50%;
+  
+}
+
+  </style>
+
+<style>
+  .chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 370px;
+    height:300px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 9999;
+  }
+  
+  .chat-header {
+    background: linear-gradient(45deg, #4d4aa0, #00c8a2);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  .chat-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f1f3f6;
+    position: relative;
+  }
+  
+  .message {
+    display: flex;
+    align-items: flex-end;
+    margin: 10px 0;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .message.user {
+    justify-content: flex-end;
+  }
+  
+  .message.bot {
+    justify-content: flex-start;
+  }
+  
+  .bubble {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .message.user .bubble {
+    background: #d1f2eb;
+    color: #000;
+    border-bottom-right-radius: 0;
+  }
+  
+  .message.bot .bubble {
+    background: #e0e7ff;
+    color: #000;
+    border-bottom-left-radius: 0;
+  }
+  
+  .avatar {
+    width: 20px;
+    height: 20px;
+    margin: 0 8px;
+    border-radius: 50%;
+    background-size: cover;
+  }
+  
+  .user .avatar {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1946/1946429.png');
+  }
+  
+  .bot .avatar {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4712/4712035.png');
+  }
+  
+  .typing-indicator {
+    display: none;
+    font-style: italic;
+    font-size: 12px;
+    color: #777;
+    margin: 5px 0;
+  }
+  
+  .chat-footer {
+    display: flex;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    background: white;
+  }
+  
+  .chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  .chat-footer button {
+    background: #917bc9;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .chat-footer button:hover {
+    background: #005f53;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .chat-float-btn {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background-color: #4d4aa0;
+color: white;
+border: none;
+border-radius: 50%;
+width: 60px;
+height: 60px;
+font-size: 24px;
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+cursor: pointer;
+z-index: 10000;
+transition: background 0.3s;
+}
+
+.chat-float-btn:hover {
+background-color: #00c8a2;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><img class="logo" src="images/logo2.png" alt="Logo" width="60px" height="60px" />  DOKITALINK</h1>
+
+    <nav>
+      <a href="index.php">Accueil</a>
+      <a href="services.php">Services</a>
+      <a href="connexion.php">Espace patient</a>
+      <a href="inscriptionmedecin.php">Vous etes Medecine</a>
+      <a href="pharmacie.php">pharmacies de garde</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Des services de santé innovants à portée de main</h2>
+    <p>Découvrez comment DOKITALINK facilite votre accès aux soins partout et à tout moment.</p>
+  </section>
+
+  <section class="services">
+    <div class="service-card">
+      <div class="service-icon">📁</div>
+      <div class="service-content">
+        <h3>Dossier Médical Partagé</h3>
+        <p>Accédez à un dossier médical sécurisé contenant toutes vos informations de santé, accessible uniquement aux professionnels autorisés. Cela facilite le suivi médical et assure une meilleure coordination des soins.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">💻</div>
+      <div class="service-content">
+        <h3>Téléconsultation</h3>
+        <p>Consultez des professionnels de santé à distance via votre smartphone ou ordinateur, sans vous déplacer. Prenez rendez-vous en ligne et bénéficiez de consultations en toute sécurité depuis chez vous.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">💊</div>
+      <div class="service-content">
+        <h3>Commande de Médicaments</h3>
+        <p>Envoyez votre ordonnance et faites-vous livrer vos médicaments sans vous rendre en pharmacie. Un service pratique pour gagner du temps et éviter les déplacements inutiles.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">⏰</div>
+      <div class="service-content">
+        <h3>Alertes Médicamenteuses</h3>
+        <p>Recevez des rappels personnalisés pour ne jamais oublier vos prises de médicaments. DOKITALINK vous envoie des notifications pour vous aider à respecter votre traitement.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🗺️</div>
+      <div class="service-content">
+        <h3>Pharmacie de Garde</h3>
+        <p>Localisez rapidement la pharmacie de garde la plus proche, 24h/24 et 7j/7. Un service essentiel pour trouver des médicaments en dehors des heures d'ouverture habituelles.</p>
+      </div>
+    </div>
+  </section>
+
+   <!-- Bouton flottant pour ouvrir le chatbot -->
+<button id="openChatBtn" class="chat-float-btn">💬</button>
+
+<!-- Boîte du chatbot masquée par défaut -->
+<div class="chatbot-container" id="chatbot" style="display: none;">
+  <div class="chat-header">🤖 DokitaBot</div>
+  <div class="chat-body" id="chatBody">
+    <div class="typing-indicator" id="typingIndicator">DokitaBot est en train de répondre...</div>
+  </div>
+  <div class="chat-footer">
+    <input type="text" id="userInput" placeholder="Posez votre question..." onkeydown="handleKey(event)">
+    <button onclick="sendMessage()">Envoyer</button>
+  </div>
+</div>
+
+  <footer>
+    <h2>Nous contacter</h2>
+    <div class="social-icon">
+        <a href="https://www.facebook.com/share/p/1ANh4WLUJC/ "><i class='bx bxl-facebook' ></i></a>
+        <a href="lien titok :https://www.tiktok.com/@dokitalink?is_from_webapp=1&sender_device=pc"><i class='bx bxl-tiktok' ></i></a>
+        <a href="https://www.instagram.com/dokitalink/?utm_source=ig_web_button_share_sheet"><i class='bx bxl-instagram' ></i></a>
+        </div>
+  </section>
+    <p>Adresse : 123 Rue de la Santé, Lomé, Togo</p> 
+    <p>&copy; 2025 DOKITALINK. Tous droits réservés.</p>
+    <p>Contact : info@dokitalink.com | +228 90 08 32 72</p>
+  </footer>
+  <script>
+    const faq = [
+      {
+        keywords: ["services", "offres", "proposez-vous", "proposition"],
+        response: "Nous proposons des consultations médicales, des rendez-vous en ligne et des services spécialisés."
+      },
+      {
+        keywords: ["rendez-vous", "prendre rendez-vous", "annuler rendez-vous", "modifier rendez-vous"],
+        response: "Vous pouvez prendre, annuler ou modifier un rendez-vous à tout moment depuis notre interface."
+      },
+      {
+        keywords: ["consultation", "consulter", "consultez", "consultations"],
+        response: "Les consultations peuvent être en ligne ou en présentiel, selon la disponibilité des médecins."
+      },
+      {
+        keywords: ["médecin", "docteur", "spécialiste", "disponible", "généraliste"],
+        response: "Oui, des médecins sont disponibles 7j/7. Souhaitez-vous parler à un généraliste ou un spécialiste ?"
+      },
+      {
+        keywords: ["pharmacie", "garde", "pharmacie ouverte", "pharmacie de garde"],
+        response: "Les pharmacies de garde sont disponibles dans la section dédiée du site. Cliquez sur 'Pharmacies de garde' pour voir la liste."
+      },
+      {
+        keywords: ["inscription", "m'inscrire", "s'inscrire", "compte"],
+        response: "Pour créer un compte, cliquez sur 'S'inscrire'. Si vous êtes médecin, utilisez la page dédiée aux professionnels."
+      },
+      {
+        keywords: ["mot de passe", "oublié mot de passe", "réinitialiser", "problème connexion"],
+        response: "Cliquez sur 'Mot de passe oublié' sur la page de connexion pour réinitialiser votre mot de passe."
+      },
+      {
+        keywords: ["spécialistes", "cardiologue", "pédiatre", "dermatologue"],
+        response: "Nous avons des cardiologues, pédiatres, dermatologues, et bien plus encore."
+      },
+      {
+        keywords: ["symptômes", "fièvre", "paludisme", "mal de tête"],
+        response: "Je ne suis pas médecin, mais je vais vous mettre en relation avec un professionnel de santé."
+      },
+      {
+        keywords: [ "fièvre et mal de tête "],
+        response: "Je ne suis pas médecin, mais d'apres mes analyses il s'agit des symptômes du paludisme."
+      },
+      {
+        keywords: ["je veux un sequence de téléconsultation", "je veux consultation en ligne", "je veux consultation à distance"],
+        response: "La téléconsultation est disponible. Prenez rendez-vous avec un médecin en ligne."
+      },
+      {
+        keywords: ["ordonnance", "prescription", "médicaments"],
+        response: "Vous pouvez envoyer votre ordonnance pour commander des médicaments."
+      },
+      {
+        keywords: ["application", "mobile", "app"],
+        response: "L'application mobile est en développement. Restez connecté pour être informé de son lancement !"
+      },
+      {
+        keywords: ["application", "mobile", "app"],
+        response: "L'application mobile est en développement. Restez connecté pour être informé de son lancement !"
+      },
+      {
+        keywords: ["support", "aide", "assistance", "problème technique"],
+        response: "Pour toute aide technique, utilisez notre page 'Contact' ou envoyez-nous un message ici."
+      },
+      {
+        keywords: ["robot", "intelligence", "qui es-tu", "chatbot", "assistant"],
+        response: "Je suis DokitaBot, un assistant virtuel prêt à vous aider !"
+      },
+      {
+        keywords: ["bonjour", "salut", "hey", "bonsoir"],
+        response: "Bonjour 👋 ! Je suis DokitaBot. Que puis-je faire pour vous ?"
+      },
+      {
+        keywords: ["je ne me sens pas bien", "je suis malade", "je suis fatigué"],
+        response: "Je suis désolé d'apprendre cela.Pourraiez-vous me communiquer vos symptômes ?"
+      },
+      {
+        keywords: ["je suis stressé", "je suis anxieux", "je suis triste"],
+        response: "Je comprends que cela puisse être difficile. Parler à un professionnel pourrait vous aider."
+      },
+      {
+        keywords: ["je veux annuler mon compte", "supprimer mon compte"],
+        response: "Pour supprimer votre compte, veuillez contacter notre support client."
+      },
+      {
+        keywords: ["je veux changer ma langue", "changer langue"],
+        response: "Pour changer la langue, allez dans les paramètres de votre compte."
+      },
+      {
+        keywords: ["je veux voir mes résultats médicaux", "voir mes résultats"],
+        response: "Vous pouvez voir vos résultats médicaux dans la section 'Mon dossier médical'."
+      },
+      {
+        keywords: ["merci", "merci beaucoup", "merci pour votre aide"],
+        response: "Avec plaisir ! Si vous avez d'autres questions, n'hésitez pas à demander."
+      },
+      {
+        keywords:["j'ai la fievre", "j'ai mal à la tête", "j'ai des douleurs"],
+        response: "Je ne suis pas médecin, mais je vous mettre en contact avec un professionnel de santé."
+      },
+      {
+        keywords: ["je veux prendre rendez-vous", "prendre rendez-vous", "réserver un rendez-vous"],
+        response: "Pour prendre rendez-vous, veuillez vous rendre dans la section 'Prendre un rendez-vous'."
+      },
+      {
+        keywords: ["je veux annuler mon rendez-vous", "annuler mon rendez-vous"],
+        response: "Pour annuler votre rendez-vous, allez dans la section 'Mes rendez-vous'."
+      },
+      {
+        keywords: ["je veux modifier mon rendez-vous", "modifier mon rendez-vous"],
+        response: "Pour modifier votre rendez-vous, allez dans la section 'Mes rendez-vous'."
+      },
+      {
+        keywords: ["je veux parler à un médecin", "parler à un médecin", "consulter un médecin"],
+        response: "Pour parler à un médecin, allez dans la section 'Téléconsultation'."
+      },
+      {
+        keywords: ["je veux voir mes résultats médicaux", "voir mes résultats"],
+        response: "Vous pouvez voir vos résultats médicaux dans la section 'Mon dossier médical'."
+      },
+      {
+        keywords: ["je veux commander des médicaments", "commander des médicaments"],
+        response: "Pour commander des médicaments, allez dans la section 'Commande de médicaments'."
+      },
+      {
+        keywords: ["je veux recevoir des rappels", "rappels"],
+        response: "Pour recevoir des rappels, activez les notifications dans votre profil."
+      },
+      {
+        keywords: ["je veux changer mon mot de passe", "changer mot de passe"],
+        response: "Pour changer votre mot de passe, allez dans la section 'Mon compte'."
+      },
+      {
+        keywords: ["je veux supprimer mon compte", "supprimer mon compte"],
+        response: "Pour supprimer votre compte, contactez notre support client."
+      },
+      {
+        keywords: ["je veux donner mon avis", "laisser un avis", "feedback"],
+        response: "Nous apprécions vos retours ! Vous pouvez laisser un avis dans la section 'Contact'."
+      },
+      {
+        keywords: ["je veux parler à un conseiller", "parler à un conseiller"],
+        response: "Pour parler à un conseiller, allez dans la section 'Contact'."
+      },
+      {
+        keywords: ["je veux en savoir plus sur DOKITALINK", "en savoir plus"],
+        response: "Pour en savoir plus, consultez notre section 'À propos'."
+      },
+      {
+        keywords: ["je veux me déconnecter", "déconnexion"],
+        response: "Pour vous déconnecter, cliquez sur le bouton 'Déconnexion' dans votre profil."
+      },
+      {
+        keywords: ["je veux me connecter", "connexion"],
+        response: "Pour vous connecter, entrez vos identifiants sur la page de connexion."
+      },
+      {
+        keywords: ["je veux m'inscrire", "inscription"],
+        response: "Pour vous inscrire, cliquez sur le bouton 'S'inscrire'."
+      },
+      {
+        keywords: ["je veux changer ma langue", "changer langue"],
+        response: "Pour changer la langue, allez dans les paramètres de votre compte."
+      },
+      {
+        keywords: ["je veux voir les pharmacies de garde", "pharmacies de garde"],
+        response: "Pour voir les pharmacies de garde, allez dans la section 'Pharmacies de garde'."
+      },
+      {
+        keywords: ["je veux voir les médecins disponibles", "médecins disponibles"],
+        response: "Pour voir les médecins disponibles, allez dans la section 'Médecins'."
+      },
+      {
+        keywords: ["je veux voir mes rendez-vous", "mes rendez-vous"],
+        response: "Pour voir vos rendez-vous, allez dans la section 'Mes rendez-vous'."
+      },
+
+    ];
+    
+    // Gestion touche entrée
+    function handleKey(e) {
+      if (e.key === "Enter") sendMessage();
+    }
+    
+    // Fonction d'envoi
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const chatBody = document.getElementById("chatBody");
+      const typing = document.getElementById("typingIndicator");
+    
+      const message = input.value.trim();
+      if (!message) return;
+    
+      addMessage("user", message);
+      input.value = "";
+    
+      typing.style.display = "block";
+      chatBody.scrollTop = chatBody.scrollHeight;
+    
+      setTimeout(() => {
+        typing.style.display = "none";
+        const response = getBotResponse(message.toLowerCase());
+        addMessage("bot", response);
+      }, 1200);
+    }
+    
+    // Ajoute les messages au chat
+    function addMessage(sender, text) {
+      const chatBody = document.getElementById("chatBody");
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add("message", sender);
+    
+      const avatar = document.createElement("div");
+      avatar.classList.add("avatar", sender);
+    
+      const bubble = document.createElement("div");
+      bubble.classList.add("bubble");
+      bubble.innerHTML = text;
+    
+      if (sender === "bot") {
+        messageDiv.appendChild(avatar);
+        messageDiv.appendChild(bubble);
+      } else {
+        messageDiv.appendChild(bubble);
+        messageDiv.appendChild(avatar);
+      }
+    
+      chatBody.appendChild(messageDiv);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+    
+    // Obtenir réponse basée sur mots-clés
+    function getBotResponse(msg) {
+      for (const entry of faq) {
+        if (entry.keywords.some(keyword => msg.includes(keyword))) {
+          return entry.response;
+        }
+      }
+      return "Je suis désolé, je n'ai pas compris. Vous pouvez reformuler ou consulter nos pages pour plus d'infos !";
+    }
+    </script>
+    <script>
+  const toggleBtn = document.getElementById("openChatBtn");
+  const chatbot = document.getElementById("chatbot");
+
+  toggleBtn.addEventListener("click", () => {
+    if (chatbot.style.display === "none") {
+      chatbot.style.display = "flex"; // Montre le chatbot
+    } else {
+      chatbot.style.display = "none"; // Cache le chatbot
+    }
+  });
+</script>
+ 

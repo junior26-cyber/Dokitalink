@@ -1,0 +1,35 @@
+{
+    "name": "Dokitalink",
+    "short_name": "DLink",
+    "start_url": "./index.php",
+    "display": "standalone",
+    "background_color": "#3A8DFF",
+    "theme_color": "#2ecc71",
+    "icons": [
+      {
+        "src": "images/logo2.png",
+        "sizes": "144x144",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "images/logo2.png",
+        "sizes": "500x500",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "images/screenshot-desktop.png",
+        "sizes": "1280x800",
+        "type": "image/png",
+        "form_factor": "wide"
+      },
+      {
+        "src": "images/screenshot-mobile.png",
+        "sizes": "750x1334",
+        "type": "image/png"
+      }
+    ]
+}

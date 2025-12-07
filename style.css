@@ -1,0 +1,87 @@
+@media (max-width: 768px) {
+    body {
+      background-attachment: scroll; /* Meilleure performance sur mobile */
+      background-size: cover;
+    }
+  
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px 20px;
+    }
+  
+    nav {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    nav a {
+      margin: 10px 0;
+      padding: 10px 0;
+    }
+  
+    .hero {
+      padding: 30px 20px;
+      margin-top: 20px;
+    }
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    section {
+      padding: 30px 20px;
+    }
+  
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .chatbot-container {
+      width: 95%;
+      height: 350px;
+      right: 2.5%;
+      bottom: 80px;
+    }
+  
+    .chat-float-btn {
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+    }
+  
+    .social-icon {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  
+    .social-icon a {
+      width: 50px;
+      height: 50px;
+      font-size: 1.8rem;
+    }
+  
+    footer {
+      padding: 20px 15px;
+      text-align: center;
+    }
+  
+    .contact input,
+    .contact textarea {
+      font-size: 14px;
+    }
+  
+    .contact button {
+      width: 100%;
+    }
+  }
+  
